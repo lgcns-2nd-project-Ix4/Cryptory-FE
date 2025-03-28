@@ -5,13 +5,13 @@ pipeline {
         AWS_REGION = 'ap-northeast-1'
         IMAGE_NAME = 'react-frontend'
         ECR_REGISTRY = '050314037804.dkr.ecr.ap-northeast-1.amazonaws.com'
-        ECR_REPO = "${ECR_REGISTRY}/${IMAGE_NAME}"
+        ECR_REPO = "${ECR_REGISTRY}/ix4-frontend"
 
         // 빌드에 넘겨줄 환경 변수 값 
         VITE_REST_API_HOST = credentials('VITE_REST_API_HOST')
         VITE_REST_API_PORT = credentials('VITE_REST_API_PORT')
         VITE_GPT_API_PORT = credentials('VITE_GPT_API_PORT')
-        
+
         VITE_KAKAO_CLIENT_ID = credentials('VITE_KAKAO_CLIENT_ID')
         VITE_KAKAO_SECRET = credentials('VITE_KAKAO_SECRET')
         VITE_NAVER_CLIENT_ID = credentials('VITE_NAVER_CLIENT_ID')
