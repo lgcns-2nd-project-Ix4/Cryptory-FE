@@ -1,0 +1,69 @@
+/* 로그인 섹션 */
+.admin-login-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20vh;
+}
+
+.admin-login-bg {
+    background-color: #fff;
+    padding: 10px 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 로그인 내용 */
+.admin-login-title {
+    font-size: 30px;
+    font-weight: lighter;
+    color: gray;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.admin-login-input-lines {
+    width: 300px;
+}
+
+.admin-login-input-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-login-content input {
+
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.admin-login-content {
+    text-align: center;
+    font-family: 'ABeeZee', sans-serif;
+    color: #7A7C7F;
+}
+
+/* 버튼 */
+.admin-login-button {
+    background-color: #757575;
+    color: #fff;
+    border-radius: 3px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    align-self: center;
+    width: 120px;
+    margin: 20px 0px;
+}
+
+.admin-login-button:hover {
+    background-color: #f1c40f;
+}

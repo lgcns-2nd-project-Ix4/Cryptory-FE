@@ -1,0 +1,97 @@
+/* 헤더 스타일 */
+.banner {
+    display: flex;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    width: 600px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: gray;
+    font-size: 16px;
+}
+
+.nav-link.active {
+    color: black;
+    font-weight: bold;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.username {
+    color: gray;
+    margin-left: -10px;
+}
+
+.logout-btn {
+    border: none;
+    background: none;
+    color: gray;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    color: black;
+}
+
+/*!* 뉴스 리스트 스타일 *!*/
+/*.content {*/
+/*    max-width: 600px;*/
+/*    margin: 30px auto;*/
+/*}*/
+
+/*.news-list {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    gap: 12px;*/
+/*}*/
+
+/*!* 뉴스 카드 스타일 *!*/
+/*.news-card {*/
+/*    background: white;*/
+/*    padding: 16px;*/
+/*    border-radius: 8px;*/
+/*    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);*/
+/*    border: 1px solid #ddd;*/
+/*}*/
+
+/*.news-title {*/
+/*    font-size: 16px;*/
+/*    font-weight: bold;*/
+/*    margin-bottom: 4px;*/
+/*}*/
+
+/*.news-description {*/
+/*    font-size: 14px;*/
+/*    color: gray;*/
+/*    margin-bottom: 8px;*/
+/*}*/
+
+/*.news-date {*/
+/*    font-size: 12px;*/
+/*    color: lightgray;*/
+/*    text-align: right;*/
+/*}*/

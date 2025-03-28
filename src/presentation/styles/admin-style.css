@@ -1,0 +1,116 @@
+body {
+    font-family: 'ABeeZee', sans-serif;
+}
+
+/* 섹션 스타일 */
+.admin-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+/* 소제목 스타일 */
+.admin-title {
+    font-size: 30px;
+    font-weight: lighter;
+    color: gray;
+    margin-bottom: 35px;
+}
+
+
+
+/* 서브 탭 */
+.sub-main-btn {
+    border: none;
+    background: none;
+    color: #C2C2C2;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.sub-main-btn:hover {
+    color: #252525;
+}
+
+.sub-main-btn-on {
+    border: none;
+    background: none;
+    color: #252525;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.sub-main-nav {
+    display: flex;
+    justify-content: center;  /* 중앙 정렬 */
+    gap: 40px;  /* 버튼 사이 간격 */
+    margin-top: 0px; /* 위쪽 여백 추가 */
+    margin-bottom: 40px;
+}
+
+/* 📌 대시보드 컨테이너 */
+.dashboard-container {
+    margin-left:0;
+    max-width: 1200px;
+}
+
+/* 📌 Overview 카드 스타일 */
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.overview-card {
+    padding: 20px;
+    border-radius: 8px;
+    color: #333;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-value {
+    font-size: 24px;
+    margin: 8px 0;
+}
+
+.dashboard-change {
+    font-size: 14px;
+}
+
+
+/* 📌 Overview 카드 색상 */
+.blue-light {
+    background-color: #e0f2fe;
+}
+
+.blue-medium {
+    background-color: #bfdbfe;
+}
+
+.purple-light {
+    background-color: #e9d5ff;
+}
+
+/* 📌 차트 컨테이너 */
+.charts-container {
+    display: flex;
+    gap: 16px;
+}
+
+.chart-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+/* 📌 트래픽 바 차트 */
+.traffic-box {
+    margin-top: 20px;
+}

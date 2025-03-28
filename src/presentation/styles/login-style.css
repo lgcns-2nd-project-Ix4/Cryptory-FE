@@ -1,0 +1,35 @@
+body {
+    font-family: 'ABeeZee', sans-serif;
+}
+
+/* 로그인 섹션 스타일 */
+.login-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20vh; /* 중앙보다 약간 위쪽으로 이동 */
+}
+
+/* 로그인 텍스트 스타일 */
+.login-title {
+    font-size: 30px;
+    font-weight: lighter;
+    color: gray;
+    margin-bottom: 35px;
+}
+
+/* 로그인 버튼 스타일 */
+.login-button {
+    background-color: yellow;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.login-button:hover {
+    background-color: #f1c40f;
+}

@@ -1,0 +1,268 @@
+.prompt-btn {
+    border: none;
+    background: none;
+    color: #C2C2C2;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.prompt-btn:hover {
+    color: #252525;
+}
+
+.prompt-btn-on {
+    border: none;
+    background: none;
+    color: #252525;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.prompt-nav {
+    display: flex;
+    justify-content: center;  /* 중앙 정렬 */
+    gap: 40px;  /* 버튼 사이 간격 */
+    margin-top: 50px; /* 위쪽 여백 추가 */
+    margin-bottom: 40px;
+}
+
+/* 모달 오버레이 (배경) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 모달 내용 */
+.modal-modal-content {
+    background: #FFFFFF;
+    padding: 30px;
+    border-radius: 8px;
+    width: 700px;
+    height: 960px;
+    overflow: auto;
+}
+
+/* 모달 헤더 */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.prompt-response {
+    width: 85%;
+    background: white;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.prompt-input-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.prompt-input {
+    width: fit-content; /* 내용 크기에 맞게 조절 */
+    max-width: 85%; /* 최대 너비 제한 */
+    background: white;
+    padding: 1px 1px; /* 패딩을 적절히 설정 */
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #C2C2C2;
+    display: inline-block; /* ✅ flex 대신 inline-block 사용 */
+}
+
+.prompt-content-input {
+    width: fit-content;
+    margin-left:12px;
+    margin-right: 12px;
+    font-size: 18px;
+    color: #6C757D;
+    text-align: right;
+    white-space: pre-wrap; /* ✅ 줄바꿈 유지 및 긴 단어 자동 줄바꿈 */
+}
+
+.prompt-container {
+    width: 600px;
+}
+
+.prompt-content {
+    font-size: 18px;
+    color: #6C757D;
+}
+
+
+.coin-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.coin-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.coin-name {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.coin-symbol {
+    font-size: 12px;
+    color: gray;
+}
+
+/* 닫기 버튼 */
+.close-btn {
+    margin-left: 660px;
+    width: 28px;
+    height: 28px;
+    background-color: white;
+    background-image: url("/public/close_button.png");
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.prompt-section {
+    background: #F7F7F7;
+    border-radius: 10px;
+    margin-bottom: 0;
+    padding: 20px;
+    overflow: auto;
+}
+
+/* 뉴스 섹션 */
+.news-section {
+
+}
+
+.prompt-news-title {
+    font-size: 24px;
+    margin-bottom: 8px;
+    margin-top: 0px;
+    color: #252525
+}
+
+.prompt-news-content {
+    width: 600px;
+    font-size: 18px;
+    color: #6C757D;
+}
+
+/* 채팅 버튼 */
+.chat-section {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.chat-btn {
+    border: none;
+    background: none;
+    color: gray;
+    cursor: pointer;
+}
+
+.chat-btn:hover {
+    color: black;
+}
+
+.chat-btn-on {
+    border: none;
+    background: none;
+    color: black;
+    cursor: pointer;
+}
+
+.chat-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.chat-message {
+    width: 500px;
+    height: 40px;
+    background: white;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid white;
+    margin-bottom: 10px;
+    text-align: left;
+    color: #212529;
+}
+
+/* 댓글 입력창 */
+.chat-input {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.chat-input input {
+    flex-grow: 1;
+    border: none;
+    font-size: 14px;
+}
+
+.gpt-send-btn {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    background-image: url("/public/gpt_send_button.png");
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.un-login-prompt {
+    width: 100%;
+    text-align: center;
+    color: #6C757D;
+}
+.un-login-prompt-toLogin {
+    text-decoration: underline;
+    color: #454545;
+}
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 0, 0, 0.2);
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+

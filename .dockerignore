@@ -1,0 +1,16 @@
+node_modules/
+
+# 빌드 결과물
+/build
+
+# Git 파일
+.git/
+
+# 로그 파일
+*.log
+
+# 기타 파일
+.idea/
+.vscode/
+
+.DS_Store

@@ -1,0 +1,178 @@
+
+.admin-coin-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #575A5D;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.admin-coin-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.admin-coin-item {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 10px;
+
+    width: 190px;
+    height: 53px;
+}
+
+.admin-coin-item img {
+    width: 50px;
+    height: 50px;
+
+}
+
+.admin-coin-item.displayed {
+    border: 2px solid #000;
+    background-color: #fff;
+}
+
+.admin-coin-name {
+    font-size: 18px;
+    font-weight: normal;
+    margin-top: 5px;
+}
+
+.admin-coin-symbol {
+    text-align: left;
+    font-size: 16px;
+    color: #666;
+}
+
+
+.admin-coin-table th,
+.admin-coin-table td {
+    padding: 12px;
+}
+
+.admin-coin-table th {
+    background-color: #e7e7e7;
+    font-weight: normal;
+}
+
+.admin-coin-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.admin-coin-table tr:hover {
+    background-color: #fff;
+}
+
+.admin-coin-table {
+    margin-left: -220px;
+    width: 1000px;
+    border-collapse: collapse;
+    font-size: 12px;
+    color: #666E7D;
+    text-align: left;
+}
+
+/* 너비 조정 */
+.admin-check {
+    width: 5%; /* ID 공간 줄이기 */
+}
+
+.admin-date {
+    width: 20%; /* 닉네임 공간 늘리기 */
+}
+
+.admin-coin-title {
+    width: 50%; /* 로그인 타입 공간 줄이기 */
+}
+
+.admin-createDt {
+    width: 25%;
+}
+
+.admin-issue-add-modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    width: 500px;
+
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    font-family: 'ABeeZee', sans-serif;
+    color: #7A7C7F;
+}
+
+.admin-issue-add-modal-input-lines {
+    width: 450px;
+    margin-left: 30px;
+}
+
+.admin-issue-add-modal-input-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-issue-add-modal-content input {
+    width: 350px;
+    height: 30px;
+    padding: 3px 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.admin-issue-add-modal-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.admin-content-input {
+    margin-top: 10px;
+    width: 430px;
+    height: 250px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #6C757D;
+    resize: none;
+    outline: none;
+}
+
+.admin-write-btn {
+    width: 80px;
+    margin-left: 380px;
+    margin-bottom: 20px;
+    background-color: white;
+    border: 1px solid #C2C2C2;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 8px;
+    font-size: 12px;
+    color: #6C757D;
+    cursor: pointer;
+}
+
+.admin-write-btn:hover {
+    background-color: #f8f8f8;
+}
