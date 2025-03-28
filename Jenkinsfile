@@ -28,8 +28,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                dir('FE') {
-                    sh """
+                sh """
                     docker build \
                     --build-arg VITE_REST_API_HOST=${VITE_REST_API_HOST} \
                     --build-arg VITE_REST_API_PORT=${VITE_REST_API_PORT} \
@@ -42,8 +41,7 @@ pipeline {
                     -t $IMAGE_NAME .
 
                     docker tag $IMAGE_NAME:latest $ECR_REPO:latest
-                    """
-                }
+                """
             }
         }
 

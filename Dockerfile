@@ -28,10 +28,10 @@
 #
 #CMD ["nginx", "-g", "daemon off;"]
 
-FROM node:23-alpine AS builder
+FROM node:18-alpine AS builder
 WORKDIR /app
 
-# VITE는 빌드할 때 변수를 지정한다고 한다...
+# VITE 환경 변수
 ARG VITE_REST_API_HOST
 ARG VITE_REST_API_PORT
 ARG VITE_GPT_API_PORT
@@ -40,14 +40,15 @@ ENV VITE_REST_API_HOST=${VITE_REST_API_HOST}
 ENV VITE_REST_API_PORT=${VITE_REST_API_PORT}
 ENV VITE_GPT_API_PORT=${VITE_GPT_API_PORT}
 
-# 의존성 캐시 최적화
+# 패키지 설치 (esbuild 문제 방지)
 COPY package.json package-lock.json ./
-RUN npm ci --no-cache
+RUN npm ci --no-cache --unsafe-perm
 
-# 소스 복사
+# 소스 복사 및 빌드
 COPY . .
 RUN npm run build
 
+# Nginx로 빌드 결과 복사
 FROM nginx:stable-alpine
 COPY --from=builder /app/dist /usr/share/nginx/html
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
