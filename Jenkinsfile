@@ -3,9 +3,6 @@ pipeline {
 
     environment {
         AWS_REGION = 'ap-northeast-1'
-        IMAGE_NAME = 'react-frontend'
-        ECR_REGISTRY = '050314037804.dkr.ecr.ap-northeast-1.amazonaws.com'
-        ECR_REPO = "${ECR_REGISTRY}/ix4-frontend"
 
         // 빌드에 넘겨줄 환경 변수 값 
         VITE_REST_API_HOST = credentials('VITE_REST_API_HOST')
@@ -26,40 +23,41 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Install & Build') {
             steps {
                 sh """
-                    docker build \
-                    --build-arg VITE_REST_API_HOST=${VITE_REST_API_HOST} \
-                    --build-arg VITE_REST_API_PORT=${VITE_REST_API_PORT} \
-                    --build-arg VITE_GPT_API_PORT=${VITE_GPT_API_PORT} \
-                    --build-arg VITE_KAKAO_CLIENT_ID=${VITE_KAKAO_CLIENT_ID} \
-                    --build-arg VITE_KAKAO_SECRET=${VITE_KAKAO_SECRET} \
-                    --build-arg VITE_NAVER_CLIENT_ID=${VITE_NAVER_CLIENT_ID} \
-                    --build-arg VITE_NAVER_SECRET=${VITE_NAVER_SECRET} \
-                    --build-arg VITE_OPENAI_API_KEY=${VITE_OPENAI_API_KEY} \
-                    -t $IMAGE_NAME .
+                    npm ci
 
-                    docker tag $IMAGE_NAME:latest $ECR_REPO:latest
+                    # .env.production 파일 생성
+                    echo "VITE_REST_API_HOST=${VITE_REST_API_HOST}" > .env.production
+                    echo "VITE_REST_API_PORT=${VITE_REST_API_PORT}" >> .env.production
+                    echo "VITE_GPT_API_PORT=${VITE_GPT_API_PORT}" >> .env.production
+                    echo "VITE_KAKAO_CLIENT_ID=${VITE_KAKAO_CLIENT_ID}" >> .env.production
+                    echo "VITE_KAKAO_SECRET=${VITE_KAKAO_SECRET}" >> .env.production
+                    echo "VITE_NAVER_CLIENT_ID=${VITE_NAVER_CLIENT_ID}" >> .env.production
+                    echo "VITE_NAVER_SECRET=${VITE_NAVER_SECRET}" >> .env.production
+                    echo "VITE_OPENAI_API_KEY=${VITE_OPENAI_API_KEY}" >> .env.production
+
+                    # Vite 빌드
+                    npm run build
                 """
             }
         }
 
-        stage('Login to ECR') {
+        stage('Upload to S3') {
             steps {
                 withCredentials([[
                     $class: 'AmazonWebServicesCredentialsBinding',
                     credentialsId: 'AWS-CREDENTIALS'
                 ]]) {
-                    sh 'aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ECR_REGISTRY'
+                    sh """
+                        aws s3 sync dist/ s3://ix4-fe-bucket/ \
+                            --region $AWS_REGION \
+                            --delete
+                    """
                 }
             }
         }
 
-        stage('Push Docker Image') {
-            steps {
-                sh 'docker push $ECR_REPO:latest'
-            }
-        }
     }
 }
