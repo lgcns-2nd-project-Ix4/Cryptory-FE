@@ -8,12 +8,6 @@ pipeline {
         VITE_REST_API_HOST = credentials('VITE_REST_API_HOST')
         VITE_REST_API_PORT = credentials('VITE_REST_API_PORT')
         VITE_GPT_API_PORT = credentials('VITE_GPT_API_PORT')
-
-        VITE_KAKAO_CLIENT_ID = credentials('VITE_KAKAO_CLIENT_ID')
-        VITE_KAKAO_SECRET = credentials('VITE_KAKAO_SECRET')
-        VITE_NAVER_CLIENT_ID = credentials('VITE_NAVER_CLIENT_ID')
-        VITE_NAVER_SECRET = credentials('VITE_NAVER_SECRET')
-        VITE_OPENAI_API_KEY = credentials('VITE_OPENAI_API_KEY')
     }
 
     stages {
@@ -32,11 +26,6 @@ pipeline {
                     echo "VITE_REST_API_HOST=${VITE_REST_API_HOST}" > .env.production
                     echo "VITE_REST_API_PORT=${VITE_REST_API_PORT}" >> .env.production
                     echo "VITE_GPT_API_PORT=${VITE_GPT_API_PORT}" >> .env.production
-                    echo "VITE_KAKAO_CLIENT_ID=${VITE_KAKAO_CLIENT_ID}" >> .env.production
-                    echo "VITE_KAKAO_SECRET=${VITE_KAKAO_SECRET}" >> .env.production
-                    echo "VITE_NAVER_CLIENT_ID=${VITE_NAVER_CLIENT_ID}" >> .env.production
-                    echo "VITE_NAVER_SECRET=${VITE_NAVER_SECRET}" >> .env.production
-                    echo "VITE_OPENAI_API_KEY=${VITE_OPENAI_API_KEY}" >> .env.production
 
                     # Vite 빌드
                     npm run build
