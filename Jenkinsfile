@@ -8,6 +8,7 @@ pipeline {
         VITE_REST_API_HOST = credentials('VITE_REST_API_HOST')
         VITE_REST_API_PORT = credentials('VITE_REST_API_PORT')
         VITE_GPT_API_PORT = credentials('VITE_GPT_API_PORT')
+        VITE_GPT_API_HOST = credentials('VITE_GPT_API_HOST')
     }
 
     stages {
@@ -26,7 +27,8 @@ pipeline {
                     echo "VITE_REST_API_HOST=${VITE_REST_API_HOST}" > .env.production
                     echo "VITE_REST_API_PORT=${VITE_REST_API_PORT}" >> .env.production
                     echo "VITE_GPT_API_PORT=${VITE_GPT_API_PORT}" >> .env.production
-
+                    echo "VITE_GPT_API_HOST=${VITE_GPT_API_HOST}" >> .env.production
+                    
                     # Vite 빌드
                     npm run build
                 """

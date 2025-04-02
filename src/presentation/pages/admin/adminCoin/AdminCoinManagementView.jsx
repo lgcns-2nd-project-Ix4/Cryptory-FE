@@ -10,6 +10,7 @@ export default function AdminCoinManagementView() {
     const rest_api_host = import.meta.env.VITE_REST_API_HOST;
     const rest_api_port = import.meta.env.VITE_REST_API_PORT;
     const gpt_api_port = import.meta.env.VITE_GPT_API_PORT;
+    const gpt_api_host = import.meta.env.VITE_GPT_API_HOST;
 
     const params = useParams();
     const coinId = params.coinId;
